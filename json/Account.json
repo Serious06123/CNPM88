@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "66c42379217d59446a23af32"
+  },
+  "username": "acc1",
+  "password": "123",
+  "avatar": "https://upload.wikimedia.org/wikipedia/vi/thumb/9/9e/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_S%C6%B0_ph%E1%BA%A1m_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg/640px-Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_S%C6%B0_ph%E1%BA%A1m_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg.png?20240229043649",
+  "name": "phang ky",
+  "age": 30,
+  "phonenumber": "123456789",
+  "role": "3",
+  "position": "User"
+},
+{
+  "_id": {
+    "$oid": "66c42720217d59446a23af37"
+  },
+  "username": "doc1",
+  "password": "123",
+  "avatar": "https://danviet.mediacdn.vn/upload/2-2016/images/2016-06-24/146675097453085-park-shin-hye-doctors.jpg",
+  "name": "Lê Thị Thu Hương",
+  "age": 30,
+  "phonenumber": "123456789",
+  "role": "2",
+  "position": "Khoa Khám Bệnh"
+},
+{
+  "_id": {
+    "$oid": "66c42780217d59446a23af39"
+  },
+  "username": "admin",
+  "password": "123",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kMER2Q75E41YU6agepjmnTVDzwsBM7tvjg&s",
+  "name": "admin",
+  "age": 30,
+  "phonenumber": "123456789",
+  "role": "1",
+  "position": "Admin"
+},
+{
+  "_id": {
+    "$oid": "66c87eba849f4e9a71fe7e3b"
+  },
+  "username": "yta1",
+  "password": "123",
+  "avatar": "https://cdn.britannica.com/86/182086-050-5FB81069/singer-Taylor-swift-2013.jpg",
+  "name": "Taylor",
+  "age": 30,
+  "phonenumber": "123456789",
+  "role": "4",
+  "position": "Y ta"
+},
+{
+  "_id": {
+    "$oid": "66c88129849f4e9a71fe7e50"
+  },
+  "username": "doc2",
+  "password": "123",
+  "avatar": "https://static1.dienanh.net/upload/202107/1caaf96e-8d34-4698-8b09-facb04b64929.jpg",
+  "name": "Lê Thị Thu Trà",
+  "age": 30,
+  "phonenumber": "123456789",
+  "role": "2",
+  "position": "Nội Tổng Hợp"
+},
+{
+  "_id": {
+    "$oid": "66c88725849f4e9a71fe7e5d"
+  },
+  "username": "doc3",
+  "password": "123",
+  "avatar": "https://danviet.mediacdn.vn/upload/2-2016/images/2016-06-24/1466751014616-lee-sung-kyung-doctors.jpg",
+  "name": "Nguyễn Cao Kỳ Duyên",
+  "age": 30,
+  "phonenumber": "123456789",
+  "role": "2",
+  "position": "Ngoại tổng hợp"
+}]

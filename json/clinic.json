@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "66c877cd849f4e9a71fe7e15"
+  },
+  "name": "Phòng khám bệnh",
+  "idDoctor": {
+    "$oid": "66c42720217d59446a23af37"
+  },
+  "phonenumber": "123456789"
+},
+{
+  "_id": {
+    "$oid": "66c88278849f4e9a71fe7e52"
+  },
+  "name": "Khoa ngoại",
+  "idDoctor": {
+    "$oid": "66c88129849f4e9a71fe7e50"
+  },
+  "phonenumber": "123456789"
+},
+{
+  "_id": {
+    "$oid": "66c8a450849f4e9a71fe7e6e"
+  },
+  "name": "Khoa nội",
+  "idDoctor": {
+    "$oid": "66c88725849f4e9a71fe7e5d"
+  },
+  "phonenumber": "123456789"
+}]

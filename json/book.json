@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "66ce2c33c6e27b30bf2de0bb"
+  },
+  "typeTime": "9:00",
+  "idClinic": {
+    "$oid": "66c877cd849f4e9a71fe7e15"
+  },
+  "iduser": {
+    "$oid": "66c42379217d59446a23af32"
+  },
+  "__v": 0
+}]

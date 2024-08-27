@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7803798f.css",
+    "main.js": "/static/js/main.8d893d25.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/anhphongkham.jpg": "/static/media/anhphongkham.474cbc7201001d740ac7.jpg",
+    "static/media/basilienthien.jpg": "/static/media/basilienthien.8ad580ffae04d242b725.jpg",
+    "static/media/vânnh.png": "/static/media/vânnh.c63f64f78a8bb016dea8.png",
+    "static/media/dep2.png": "/static/media/dep2.f4e25e38393d1d8bc34b.png",
+    "static/media/bacsiduc.jpg": "/static/media/bacsiduc.9cfa1e571e8fff8b88a8.jpg",
+    "static/media/dep4.png": "/static/media/dep4.626975f29513d3e0bbfa.png",
+    "static/media/lichkhamchuyenkhoa.jpg": "/static/media/lichkhamchuyenkhoa.05b29bec584f938aa6b5.jpg",
+    "static/media/ANHBENTRAI.jpg": "/static/media/ANHBENTRAI.1bcd29fbb76483c54aef.jpg",
+    "static/media/răng_logo-removebg-preview.png": "/static/media/răng_logo-removebg-preview.792582c98815abc9c811.png",
+    "static/media/nhasilamviec2.jpg": "/static/media/nhasilamviec2.35e2eb4ab8600f474950.jpg",
+    "static/media/nhasilamviec.jpg": "/static/media/nhasilamviec.69bd16ac83eaf9a9908f.jpg",
+    "static/media/dep1.jpg": "/static/media/dep1.524931c54a04be238710.jpg",
+    "static/media/dep6.jpg": "/static/media/dep6.7b58f7c81cc9a4b8ce68.jpg",
+    "static/media/dep3.jpg": "/static/media/dep3.0e32567a8b86a1add004.jpg",
+    "static/media/tick.jpg": "/static/media/tick.976ae82d6f16bace121a.jpg",
+    "static/media/Phòng Khám.png": "/static/media/Phòng Khám.79e45802ce536883e1d3.png",
+    "static/media/dep5.jpg": "/static/media/dep5.165d601b4511aade2033.jpg",
+    "index.html": "/index.html",
+    "main.7803798f.css.map": "/static/css/main.7803798f.css.map",
+    "main.8d893d25.js.map": "/static/js/main.8d893d25.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7803798f.css",
+    "static/js/main.8d893d25.js"
+  ]
+}
