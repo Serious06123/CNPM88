@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
             console.log("req", req);
             console.log(data);
             if (data) {
-                var token = jwt.sign({ _id: data._id }, 'mk');
+                var token = jwt.sign({ _id: data._id }, process.env.JWT_SECRET || 'mk');
                 return res.json({
                     errcode: 0,
                     message: 'Đăng Nhập Thành Công',
@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
 
 router.post('/getuserdetail', (req, res) => {
     let token = req.body.token;
-    let _id = jwt.verify(token, 'mk')
+    let _id = jwt.verify(token, process.env.JWT_SECRET || 'mk')
 
     AccountModel.findOne({
         _id: _id._id

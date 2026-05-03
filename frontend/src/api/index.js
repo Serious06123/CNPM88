@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const URL = "http://localhost:5555";
+const URL = process.env.REACT_APP_API_URL || "http://localhost:5555";
 
 export const loginUser = (payload) => axios.post(`${URL}/login`, payload)
 
@@ -38,19 +38,3 @@ export const UpdateUser = (payload,id ) => axios.put(`${URL}/user/${id}`, payloa
 export const hisBook = (payload ) => axios.put(`${URL}/his/user/${payload}`)
 
 export const createHisBook = (payload) => axios.post(`${URL}/his `, payload)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

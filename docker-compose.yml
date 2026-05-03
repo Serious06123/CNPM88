@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # Database: MongoDB
+  mongo:
+    image: mongo:latest
+    container_name: mongodb_container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  # Backend Service
+  backend:
+    build: ./backend
+    container_name: backend_container
+    ports:
+      - "5555:5555"
+    environment:
+      - PORT=5555
+      - MONGODB_URI=mongodb://mongo:27017/model
+      - JWT_SECRET=mk
+    depends_on:
+      - mongo
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - REACT_APP_API_URL=http://localhost:5555
+    container_name: frontend_container
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

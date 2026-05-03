@@ -1,3 +1,4 @@
+require('dotenv').config();
 // import thư viện 
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -17,7 +18,7 @@ const routerHis = require( "./src/routers/historybook" )
 
 
 // khai báo port
-const port = 5555
+const port = process.env.PORT || 5555
 
 //dùng express
 const app = express()
@@ -53,14 +54,6 @@ routerBook
 app.listen(port, () => {
     console.log(` Running on the port : ${port}`)
 })
-
-
-
-
-
-
-
-
 
 
 

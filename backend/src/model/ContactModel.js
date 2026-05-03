@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const AccountModel = require('./AccountsModel');
-mongoose.connect('mongodb://localhost:27017/model');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/model');
 const Schema = mongoose.Schema;
 const ContactSchema = new Schema({
     // iduser: String,
