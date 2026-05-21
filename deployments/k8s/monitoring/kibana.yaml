@@ -26,11 +26,11 @@ spec:
           name: http
         resources:
           requests:
-            cpu: "100m"
-            memory: "256Mi"
+            cpu: "50m"
+            memory: "200Mi"
           limits:
-            cpu: "500m"
-            memory: "512Mi"
+            cpu: "300m"
+            memory: "350Mi" # <--- Đã hạ từ 512Mi xuống 350Mi
 ---
 apiVersion: v1
 kind: Service

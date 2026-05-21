@@ -10,7 +10,6 @@ data:
         port => 5044
       }
     }
-
     filter {
       if [kubernetes] {
         mutate {
@@ -27,14 +26,11 @@ data:
           }
         }
       }
-
-      # Parse message as JSON if possible, otherwise keep as string (for Node/Express plain text)
       json {
         source => "message"
         skip_on_invalid_json => true
       }
     }
-
     output {
       elasticsearch {
         hosts => ["http://elasticsearch:9200"]
@@ -71,10 +67,10 @@ spec:
         resources:
           requests:
             cpu: "100m"
-            memory: "256Mi"
+            memory: "150Mi"
           limits:
-            cpu: "500m"
-            memory: "512Mi"
+            cpu: "300m"
+            memory: "300Mi" # <--- Đã hạ từ 512Mi xuống 300Mi
       volumes:
       - name: config-volume
         configMap:

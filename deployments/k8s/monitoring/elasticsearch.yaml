@@ -22,9 +22,9 @@ spec:
         - name: discovery.type
           value: "single-node"
         - name: ES_JAVA_OPTS
-          value: "-Xms512m -Xmx512m"
+          value: "-Xms256m -Xmx256m" # <--- Đã hạ từ 512m xuống 256m
         - name: xpack.security.enabled
-          value: "false" # Disabled for simplified lab/assignment setup
+          value: "false"
         ports:
         - containerPort: 9200
           name: http
@@ -32,11 +32,11 @@ spec:
           name: transport
         resources:
           requests:
-            cpu: "250m"
-            memory: "512Mi"
+            cpu: "100m"
+            memory: "256Mi"
           limits:
-            cpu: "1000m"
-            memory: "1Gi"
+            cpu: "500m"
+            memory: "512Mi" # <--- Đã hạ từ 1Gi xuống 512Mi
 ---
 apiVersion: v1
 kind: Service
