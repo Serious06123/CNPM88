@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: cnpm88
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: backend-cnpm:staging
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5555
+          name: http
+        env:
+        - name: PORT
+          value: "5555"
+        - name: MONGODB_URI
+          value: "mongodb://mongo:27017/model"
+        - name: JWT_SECRET
+          value: "mk"
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: cnpm88
+  labels:
+    app: backend
+spec:
+  type: NodePort
+  ports:
+  - port: 5555
+    targetPort: 5555
+    nodePort: 30555
+    name: http
+  selector:
+    app: backend

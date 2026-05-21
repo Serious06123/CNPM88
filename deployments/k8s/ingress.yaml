@@ -1,0 +1,79 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cnpm88-ingress
+  namespace: cnpm88
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: cnpm88.local
+    http:
+      paths:
+      # Route backend APIs to backend service
+      - path: /login
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      - path: /register
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      - path: /comment
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      - path: /user
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      - path: /clinic
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      - path: /book
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      - path: /his
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      - path: /contact
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 5555
+      # Route UI traffic to frontend service
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80
