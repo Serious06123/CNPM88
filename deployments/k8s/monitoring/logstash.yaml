@@ -1,0 +1,99 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-config
+  namespace: logging
+data:
+  logstash.conf: |
+    input {
+      beats {
+        port => 5044
+      }
+    }
+
+    filter {
+      if [kubernetes] {
+        mutate {
+          add_field => {
+            "service_name" => "%{[kubernetes][container][name]}"
+            "pod_name" => "%{[kubernetes][pod][name]}"
+            "namespace" => "%{[kubernetes][namespace]}"
+          }
+        }
+      } else if [container] {
+        mutate {
+          add_field => {
+            "service_name" => "%{[container][name]}"
+          }
+        }
+      }
+
+      # Parse message as JSON if possible, otherwise keep as string (for Node/Express plain text)
+      json {
+        source => "message"
+        skip_on_invalid_json => true
+      }
+    }
+
+    output {
+      elasticsearch {
+        hosts => ["http://elasticsearch:9200"]
+        index => "k8s-logs-%{+YYYY.MM.dd}"
+      }
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logstash
+  namespace: logging
+  labels:
+    app: logstash
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logstash
+  template:
+    metadata:
+      labels:
+        app: logstash
+    spec:
+      containers:
+      - name: logstash
+        image: docker.elastic.co/logstash/logstash:8.11.1
+        ports:
+        - containerPort: 5044
+          name: beats
+        volumeMounts:
+        - name: config-volume
+          mountPath: /usr/share/logstash/pipeline
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+      volumes:
+      - name: config-volume
+        configMap:
+          name: logstash-config
+          items:
+          - key: logstash.conf
+            path: logstash.conf
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logstash
+  namespace: logging
+  labels:
+    app: logstash
+spec:
+  ports:
+  - port: 5044
+    targetPort: 5044
+    name: beats
+  selector:
+    app: logstash
